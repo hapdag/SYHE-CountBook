@@ -8,6 +8,7 @@ import java.util.Date;
 
 public class Counter {
     private String counterName;
-    private Date counterDate;
+    private Date counterDate = new Date();
+
 
 }
