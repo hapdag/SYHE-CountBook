@@ -14,6 +14,6 @@ public class CounBookMainActivity extends AppCompatActivity {
 
     @Override
     protected void onStart(){
-
+        super.onStart();
     }
 }
