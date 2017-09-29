@@ -29,4 +29,9 @@ public class CounterList {
     public void removeCounter(Counter counter) {
         counterList.remove(counter);
     }
+
+    public void clear() {
+        counterList.clear();
+    }
+
 }

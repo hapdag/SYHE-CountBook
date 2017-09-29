@@ -22,7 +22,8 @@ public class counterlist_test extends TestCase {
         testCounter.incrementCounter();
         testCounter.setName("set new name");
         testCounter.setComment("set new comment");
+        counterList.clear();
         Counter targerCounter  = counterList.getCounter("set new name");
-        targerCounter.incrementCounter();
+
     }
 }
