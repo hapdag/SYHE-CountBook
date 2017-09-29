@@ -16,6 +16,11 @@ public class CounterList {
         return counterList;
     }
 
+    public Counter getCounter(String counterName){
+        for(Counter counter: counterList ){
+            if(counter.getName().equals(counterName)) {return counter;}}
+        return null;
+    }
 
     public void addCounter(Counter counter) {
         counterList.add(counter);
