@@ -1,21 +1,27 @@
 package com.example.countbook;
 
-import java.util.HashMap;
-
+import java.util.ArrayList;
 /**
  * Created by Saddog on 9/27/2017.
  */
 
 public class CounterList {
-    private HashMap<String,Counter> counterList;
+    private ArrayList<Counter> counterList;
 
     public CounterList(){
-        counterList = new HashMap<String,Counter>();
-    }
-    
-    public void addCounter(Counter testCounter) {
+        counterList = new ArrayList<Counter>();
     }
 
-    public static void removeCounter(Counter testCounter) {
+    public ArrayList getCounterList (){
+        return counterList;
+    }
+
+
+    public void addCounter(Counter counter) {
+        counterList.add(counter);
+    }
+
+    public void removeCounter(Counter counter) {
+        counterList.remove(counter);
     }
 }

@@ -14,6 +14,13 @@ public class counterlist_test extends TestCase {
         String counterComment = "New counter comment";
         Counter testCounter = new Counter(counterName,initValue,counterComment);
         counterList.addCounter(testCounter);
-        CounterList.removeCounter(testCounter);
+//        CounterList.removeCounter(testCounter);
+        counterList.addCounter(testCounter);
+        counterList.addCounter(testCounter);
+        counterList.addCounter(testCounter);
+        counterList.removeCounter(testCounter);
+        testCounter.incrementCounter();
+        testCounter.setName("set new name");
+        testCounter.setComment("set new comment");
     }
 }
