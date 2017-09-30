@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -25,42 +26,54 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class CounBookMainActivity extends AppCompatActivity {
     private static final String FILENAME = "file.sav";
+    private ArrayList<Counter> list;
     private ListView counterListView;
-    private ArrayAdapter<CounterList> adapter;
-    private CounterList counterList;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coun_book_main);
-        counterListView = (ListView) findViewById(R.id.counterList_ListView);
+        Collection<Counter> counters = CounterListController.getCounterList().getCounters();
+        counterListView = (ListView) findViewById(R.id.counterListView);
+        //line(1) copied from lonely twitter format, should be left alone for Dr.Hindle's implementation
+        CounterList counterList;
+        list = new ArrayList<Counter>(counters);
+        ArrayAdapter<Counter> adapter = new ArrayAdapter<Counter>(this,android.R.layout.simple_list_item_1,list);
+        counterListView.setAdapter(adapter);
+
+
+        super.onCreate(savedInstanceState);
+
     }
+
     @Override
-    protected void onStart(){
+    protected void onStart() {
 
         super.onStart();
+        loadFromFile();
+
+
     }
 
-    public boolean onCreateOptionsMenu (Menu menu) {
-        getMenuInflater().inflate(R.menu.main,menu);
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
-    public void editCounters (MenuItem menu){
+    public void editCounters(MenuItem menu) {
         Intent intent = new Intent(this, EditCounterActivity.class);
         startActivity(intent);
     }
 
-    public void addCountersFunction (View view){
-        Intent intent = new Intent(this,AddCounterActivity.class);
+    public void addCountersFunction(View view) {
+        Intent intent = new Intent(this, AddCounterActivity.class);
         startActivity(intent);
     }
 
 // code taken straight from lonely twitter without editing
-/*
+
     private void loadFromFile() {
         try {
             FileInputStream fileInputStream = openFileInput(FILENAME);
@@ -70,19 +83,21 @@ public class CounBookMainActivity extends AppCompatActivity {
             //Taken from https://stackoverflow.com/questions/12384064/gson-convert-from-json-to-a-typed-arraylistt
             //2017-9-19
 
-            Type listType = new TypeToken<ArrayList<Counter>>(){}.getType();
-            counterList = gson.fromJson(in, listType);
+            Type listType = new TypeToken<ArrayList<Counter>>() {
+            }.getType();
+            list = gson.fromJson(in, listType);
 
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
-            counterList = new CounterList();
-            counterList.addCounter(counter);}
+            list = new ArrayList<Counter>();
 //		} catch (IOException e) {
 //			// TODO Auto-generated catch block
 //			throw new RuntimeException();
 //		}
+        }
     }
-
+}
+/*
     private void saveInFile() {
         try {
             FileOutputStream fos = openFileOutput(FILENAME,
@@ -90,7 +105,7 @@ public class CounBookMainActivity extends AppCompatActivity {
 
             BufferedWriter out =new BufferedWriter(new OutputStreamWriter(fos));
             Gson gson = new Gson();
-            gson.toJson(tweetList,out);
+            gson.toJson(counterList,out);
             out.flush();
             fos.close();
         } catch (FileNotFoundException e) {
@@ -101,7 +116,5 @@ public class CounBookMainActivity extends AppCompatActivity {
             throw new RuntimeException();
         }
     }
-
-
-*/
 }
+*/

@@ -26,6 +26,9 @@ public class Counter {
         this.counterDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
     }
 
+    //@Override
+    //Spublic String toString(){ return "";}
+
     public int incrementCounter() {
         this.counterValue++;
         this.counterDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date());

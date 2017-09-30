@@ -12,7 +12,7 @@ public class CounterList {
         counterList = new ArrayList<Counter>();
     }
 
-    public ArrayList<Counter> getCounterList (){
+    public ArrayList<Counter> getCounters (){
         return counterList;
     }
 
