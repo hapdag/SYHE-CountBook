@@ -11,7 +11,8 @@
         android:layout_centerVertical="true"
         android:layout_marginEnd="13dp"
         android:layout_marginRight="13dp"
-        android:text="+" />
+        android:text="+"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
     <Button
         android:id="@+id/decrementButton"
@@ -22,24 +23,47 @@
         android:layout_alignTop="@+id/incrementButton"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
-        android:text="-" />
+        android:text="-"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
     <Button
         android:id="@+id/resetCounterButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Reset counter"
         android:layout_below="@+id/decrementButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="55dp"
-        android:text="Reset counter" />
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:id="@+id/currentCounterValueText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/incrementButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="19dp"
         android:ems="10"
-        android:inputType="number" />
+        android:inputType="number"
+        android:layout_alignTop="@+id/decrementButton"
+        android:layout_alignLeft="@+id/resetCounterButton"
+        android:layout_alignStart="@+id/resetCounterButton"
+        android:layout_alignRight="@+id/resetCounterButton"
+        android:layout_alignEnd="@+id/resetCounterButton" />
+
+    <Button
+        android:id="@+id/counterDeleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="Delete" />
+
+    <TextView
+        android:id="@+id/counterDateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/counterDeleteButton"
+        android:layout_alignEnd="@+id/incrementButton"
+        android:layout_alignLeft="@+id/decrementButton"
+        android:layout_alignRight="@+id/incrementButton"
+        android:layout_alignStart="@+id/decrementButton"
+        android:text="Date"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 </RelativeLayout>
