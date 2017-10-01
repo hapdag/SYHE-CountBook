@@ -97,4 +97,22 @@
         android:layout_alignBottom="@+id/counterCommentEditText"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:id="@+id/newValueEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="58dp"
+        android:ems="10"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/newValueButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Edit value" />
 </RelativeLayout>

@@ -39,6 +39,7 @@ public class EditCounterActivity extends AppCompatActivity {
         Button plusButton = (Button)findViewById(R.id.incrementButton);
         Button minusButton = (Button) findViewById(R.id.decrementButton);
         Button resetButton = (Button) findViewById((R.id.resetCounterButton));
+        Button newValueButton = (Button)findViewById(R.id.newValueButton);
 
         nameButton.setOnClickListener(
                 new View.OnClickListener()
@@ -66,6 +67,24 @@ public class EditCounterActivity extends AppCompatActivity {
                         }
                     }
                 });
+
+
+        newValueButton.setOnClickListener(
+                new View.OnClickListener()
+                {
+                    public void onClick(View view)
+                    {
+                        Toast.makeText(EditCounterActivity.this, "Counter value set.",Toast.LENGTH_SHORT).show();
+                        EditText updateValueEditText = (EditText) findViewById(R.id.newValueEditText);
+                        Integer updateValue = Integer.parseInt(updateValueEditText.getText().toString());
+                        if(CounterListController.getCounterList().getCounter(name)==null){CounterListController.getCounterList().getCounter(newName[0]).setCounterValue(updateValue);
+                            valueTextView.setText("" + CounterListController.getCounterList().getCounter(newName[0]).getCounterValue());}else{
+                            CounterListController.getCounterList().getCounter(name).setCounterValue(updateValue);
+                            valueTextView.setText("" + CounterListController.getCounterList().getCounter(name).getCounterValue());
+                        }}
+                });
+
+
 
         plusButton.setOnClickListener(
                 new View.OnClickListener()

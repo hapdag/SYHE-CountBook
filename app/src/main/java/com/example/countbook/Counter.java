@@ -47,6 +47,10 @@ public class Counter implements Serializable {
         return counterValue;
     }
 
+    public void setCounterValue(int newValue){
+        this.counterValue = newValue;
+    }
+
     public void resetCounter() {
         this.counterValue = this.initValue;
     }
