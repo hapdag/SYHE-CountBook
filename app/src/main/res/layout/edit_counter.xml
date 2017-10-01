@@ -6,42 +6,34 @@
         android:id="@+id/incrementButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_marginEnd="13dp"
-        android:layout_marginRight="13dp"
         android:text="+"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:layout_above="@+id/resetCounterButton"
+        android:layout_toRightOf="@+id/resetCounterButton"
+        android:layout_toEndOf="@+id/resetCounterButton"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp" />
 
     <Button
         android:id="@+id/decrementButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/incrementButton"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
         android:text="-"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:layout_above="@+id/resetCounterButton"
+        android:layout_toLeftOf="@+id/resetCounterButton"
+        android:layout_toStartOf="@+id/resetCounterButton"
+        android:layout_marginRight="13dp"
+        android:layout_marginEnd="13dp" />
 
     <Button
         android:id="@+id/resetCounterButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Reset counter"
-        android:layout_below="@+id/decrementButton"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:id="@+id/counterDeleteButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:text="Delete" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp" />
 
     <TextView
         android:id="@+id/counterDateTextView"
@@ -55,14 +47,6 @@
         android:text="Date"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
-    <TextView
-        android:id="@+id/counterValueTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
-
     <EditText
         android:id="@+id/counterNameEditText"
         android:layout_width="wrap_content"
@@ -72,8 +56,7 @@
         android:layout_alignStart="@+id/decrementButton"
         android:layout_marginTop="36dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Counter Name Temp" />
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/counterCommentEditText"
@@ -84,6 +67,14 @@
         android:layout_alignTop="@+id/counterNameEditText"
         android:layout_marginTop="58dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Counter Comment Temp" />
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/counterValueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/resetCounterButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 </RelativeLayout>

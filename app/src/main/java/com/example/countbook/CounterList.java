@@ -1,28 +1,24 @@
 package com.example.countbook;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collection;
+
 /**
  * Created by Saddog on 9/27/2017.
  */
 
-public class CounterList {
-    private ArrayList<Counter> counterList;
+public class CounterList implements Serializable{
+
+    private ArrayList<Counter> counterList = null;
     protected transient ArrayList<Listener> listeners = null;
 
 
     public CounterList(){
         counterList = new ArrayList<Counter>();
+        listeners = new ArrayList<Listener>();
     }
 
-    public ArrayList<Counter> getCounters (){
-        return counterList;
-    }
-
-    public Counter getCounter(String counterName){
-        for(Counter counter: counterList ){
-            if(counter.getName().equals(counterName)) {return counter;}}
-        return null;
-    }
 
     private ArrayList<Listener> getListeners() {
         if (listeners == null ) {
@@ -31,6 +27,14 @@ public class CounterList {
         return listeners;
     }
 
+    public Collection<Counter> getCounters (){
+        return counterList;
+    }
+
+    public void addCounter(Counter counter) {
+        counterList.add(counter);
+        notifyListeners();
+    }
 
     private void notifyListeners() {
         for (Listener  listener : getListeners()) {
@@ -38,14 +42,24 @@ public class CounterList {
         }
     }
 
-    public void addCounter(Counter counter) {
-        counterList.add(counter);
-    }
-
     public void removeCounter(Counter counter) {
         counterList.remove(counter);
         notifyListeners();
     }
+
+    public int size(){
+        return counterList.size();
+    }
+
+    public Counter getCounter(String counterName){
+        for(Counter counter: counterList ){
+            if(counter.getName().equals(counterName)) {return counter;}}
+        return null;
+    }
+
+public boolean contains(Counter counter){
+    return counterList.contains(counter);
+}
 
     public void clear() {
         counterList.clear();

@@ -12,6 +12,7 @@ public class AddCounterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_counter);
+        CounterListManager.initManager(this.getApplicationContext());
     }
 
     public void addCounterAction (View view){
