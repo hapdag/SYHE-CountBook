@@ -1,7 +1,9 @@
 package com.example.countbook;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -57,13 +59,12 @@ public class CounBookMainActivity extends AppCompatActivity {
 
         //stack overflow code on making ListView item clickable
         //here is attempt
-        counterListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+/*        counterListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView <? > arg0, View view, int position, long id) {
-                Intent intent = new Intent(CounBookMainActivity.this, EditCounterActivity.class);
-                startActivity(intent);
+
             }
         });
-
+*/
         CounterListController.getCounterList().addListener(new Listener() {
             @Override
             public void update() {
@@ -76,13 +77,28 @@ public class CounBookMainActivity extends AppCompatActivity {
         counterListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view,
-                int position, long id) {
-                    Toast.makeText(CounBookMainActivity.this, "delete "+list.get(position).toString(),Toast.LENGTH_SHORT).show();
-                    Counter toDeleteCouter = list.get(position);
-                    CounterListController.getCounterList().removeCounter(toDeleteCouter);
-                    updateTextView();
-                    adapter.notifyDataSetChanged();
-                    return false;
+                                           final int position, long id) {
+                AlertDialog.Builder adb = new AlertDialog.Builder(CounBookMainActivity.this);
+                adb.setMessage("Options "+ list.get(position).toString());
+                adb.setCancelable(true);
+                adb.setPositiveButton("Delete",new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Counter toDeleteCounter = list.get(position);
+                        CounterListController.getCounterList().removeCounter(toDeleteCounter);
+                        updateTextView();
+                        adapter.notifyDataSetChanged();
+                    }
+                });
+                adb.setNegativeButton("View/Edit",new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Intent intent = new Intent(CounBookMainActivity.this, EditCounterActivity.class);
+                        startActivity(intent);
+                    }
+                });
+                adb.show();
+                return false;
             }
         });
     }
