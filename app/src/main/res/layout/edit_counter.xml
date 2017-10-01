@@ -34,18 +34,6 @@
         android:layout_below="@+id/decrementButton"
         android:layout_centerHorizontal="true" />
 
-    <EditText
-        android:id="@+id/currentCounterValueText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        android:layout_alignTop="@+id/decrementButton"
-        android:layout_alignLeft="@+id/resetCounterButton"
-        android:layout_alignStart="@+id/resetCounterButton"
-        android:layout_alignRight="@+id/resetCounterButton"
-        android:layout_alignEnd="@+id/resetCounterButton" />
-
     <Button
         android:id="@+id/counterDeleteButton"
         android:layout_width="wrap_content"
@@ -66,4 +54,36 @@
         android:layout_alignStart="@+id/decrementButton"
         android:text="Date"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <TextView
+        android:id="@+id/counterValueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+    <EditText
+        android:id="@+id/counterNameEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/decrementButton"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/decrementButton"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Counter Name Temp" />
+
+    <EditText
+        android:id="@+id/counterCommentEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/counterNameEditText"
+        android:layout_alignStart="@+id/counterNameEditText"
+        android:layout_alignTop="@+id/counterNameEditText"
+        android:layout_marginTop="58dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Counter Comment Temp" />
 </RelativeLayout>

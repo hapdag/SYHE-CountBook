@@ -26,9 +26,6 @@ public class Counter {
         this.counterDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
     }
 
-    //@Override
-    //Spublic String toString(){ return "";}
-
     public int incrementCounter() {
         this.counterValue++;
         this.counterDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
@@ -47,10 +44,13 @@ public class Counter {
         return counterValue;
     }
 
+    public int getCounterValue(){
+        return counterValue;
+    }
+
     public void resetCounter() {
         this.counterValue = this.initValue;
     }
-
 
     public void setName(String counterName) {
         this.counterName = counterName;
@@ -67,6 +67,12 @@ public class Counter {
     public void setComment(String counterComment) {
         this.counterComment = counterComment;
     }
+
+    @Override
+    public String toString(){
+        String returnStr ="Counter name: " + getName()+"; Counter value: "+getCounterValue();
+        return returnStr;}
+
 
 }
 

@@ -15,12 +15,15 @@ public class AddCounterActivity extends AppCompatActivity {
     }
 
     public void addCounterAction (View view){
-        Toast.makeText(this,"add counter action.",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"New counter added.",Toast.LENGTH_SHORT).show();
         CounterListController ct = new CounterListController();
         EditText counterName = (EditText) findViewById(R.id.addCounterNameText);
+        String counterNameStr = counterName.getText().toString();
         EditText counterValue = (EditText) findViewById(R.id.initCounterValueNumber);
+        Integer counterValueInt = Integer.parseInt(counterValue.getText().toString());
         EditText counterComment = (EditText) findViewById(R.id.counterCommentText);
-        ct.addCounter(new Counter(counterName.getText().toString(),Integer.parseInt(counterValue.getText().toString()),counterComment.getText().toString()));
+        String counterCommentStr = counterComment.getText().toString();
+        ct.addCounter(new Counter(counterNameStr,counterValueInt,counterCommentStr));
     }
 
 }

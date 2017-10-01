@@ -2,6 +2,7 @@ package com.example.countbook;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
 
 public class EditCounterActivity extends AppCompatActivity {
 
@@ -10,4 +11,5 @@ public class EditCounterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_counter);
     }
+
 }

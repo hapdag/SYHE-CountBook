@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -31,20 +32,11 @@ import java.util.Collection;
 public class CounBookMainActivity extends AppCompatActivity {
     private static final String FILENAME = "file.sav";
     private ArrayList<Counter> list;
-    private ListView counterListView;
+    private static ListView counterListView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_coun_book_main);
-        Collection<Counter> counters = CounterListController.getCounterList().getCounters();
-        counterListView = (ListView) findViewById(R.id.counterListView);
-        //line(1) copied from lonely twitter format, should be left alone for Dr.Hindle's implementation
-        CounterList counterList;
-        list = new ArrayList<Counter>(counters);
-        ArrayAdapter<Counter> adapter = new ArrayAdapter<Counter>(this,android.R.layout.simple_list_item_1,list);
-        counterListView.setAdapter(adapter);
-
-
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_coun_book_main);
 
     }
 
@@ -53,18 +45,53 @@ public class CounBookMainActivity extends AppCompatActivity {
 
         super.onStart();
         loadFromFile();
+        Collection<Counter> counters = CounterListController.getCounterList().getCounters();
+        counterListView = (ListView) findViewById(R.id.counterListView);
+        //line(1) copied from lonely twitter format, should be left alone for Dr.Hindle's implementation
+        CounterList counterList;
+        list = new ArrayList<>(counters);
+        final ArrayAdapter<Counter> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,list);
+        counterListView.setAdapter(adapter);
+        updateTextView();
 
 
+        //stack overflow code on making ListView item clickable
+        //here is attempt
+        counterListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView <? > arg0, View view, int position, long id) {
+                Intent intent = new Intent(CounBookMainActivity.this, EditCounterActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        CounterListController.getCounterList().addListener(new Listener() {
+            @Override
+            public void update() {
+                list.clear();
+                Collection<Counter> students = CounterListController.getCounterList().getCounters();
+                list.addAll(students);
+                adapter.notifyDataSetChanged();
+            }
+        });
+        counterListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view,
+                int position, long id) {
+                    Toast.makeText(CounBookMainActivity.this, "delete "+list.get(position).toString(),Toast.LENGTH_SHORT).show();
+                    Counter toDeleteCouter = list.get(position);
+                    CounterListController.getCounterList().removeCounter(toDeleteCouter);
+                    updateTextView();
+                    adapter.notifyDataSetChanged();
+                    return false;
+            }
+        });
     }
 
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
 
-    public void editCounters(MenuItem menu) {
-        Intent intent = new Intent(this, EditCounterActivity.class);
-        startActivity(intent);
+    public void updateTextView() {
+        Integer update =list.size();
+        TextView textView = (TextView) findViewById(R.id.totalCountersTextView);
+        textView.setText("Summary: "+Integer.toString(update)+" total counters.");
     }
 
     public void addCountersFunction(View view) {
@@ -72,7 +99,7 @@ public class CounBookMainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-// code taken straight from lonely twitter without editing
+// code taken from lonely twitter with minor editing
 
     private void loadFromFile() {
         try {
