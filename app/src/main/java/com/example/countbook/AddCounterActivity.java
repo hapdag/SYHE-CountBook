@@ -25,6 +25,7 @@ public class AddCounterActivity extends AppCompatActivity {
         EditText counterComment = (EditText) findViewById(R.id.counterCommentText);
         String counterCommentStr = counterComment.getText().toString();
         ct.addCounter(new Counter(counterNameStr,counterValueInt,counterCommentStr));
-    }
+
+        }
 
 }

@@ -2,6 +2,7 @@ package com.example.countbook;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -14,14 +15,11 @@ public class Counter implements Serializable {
     private int counterValue, initValue;
     private String counterComment;
 
+
+
     public Counter(String name, Integer initValue, String comment) {
         this.counterName = name;
-        if (initValue >= 0) {
-            this.counterValue = initValue;
-        } else {
-            throw new IllegalArgumentException("No negative number for counter value.");
-        }
-        ;
+        this.counterValue = initValue;
         this.initValue = initValue;
         this.counterComment = comment;
         this.counterDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date());

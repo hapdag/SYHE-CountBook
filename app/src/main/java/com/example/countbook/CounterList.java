@@ -53,9 +53,12 @@ public class CounterList implements Serializable{
 
     public Counter getCounter(String counterName){
         for(Counter counter: counterList ){
-            if(counter.getName().equals(counterName)) {return counter;}}
+            if(counter.getName().equals(counterName)) {
+                notifyListeners();
+                return counter;}}
         return null;
     }
+
 
 public boolean contains(Counter counter){
     return counterList.contains(counter);
