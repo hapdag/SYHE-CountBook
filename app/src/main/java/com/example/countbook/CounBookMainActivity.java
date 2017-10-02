@@ -2,7 +2,7 @@
 ** Main Activity class for CountBook, set itself to layout screen and initiates CounterListManager for io
 * Setup ListView with Adapter onStart and pull data from CounterListController and updates onto layout
 * Clicking on counters on ListView gives user option to view/edit counter detail or delete the counter
-* Clicking on add counter button
+* Clicking on add counter button sends user to to new Activity to give arguments for new counter object
 *
 */
 package com.example.countbook;

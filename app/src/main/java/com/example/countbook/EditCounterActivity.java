@@ -1,3 +1,11 @@
+/*
+** New Activity created on selection of the view/edit option on the popup menu
+* Counter data is shown on EditText fields, and for editing counter fields with new inputs, enter
+* new data on EditText fields, and new data is set on button click
+* Pretty simple getter and setter implementations using the CounterListController class
+* Lots of un re-factored code, looks really ugly but gets the job done
+ */
+
 package com.example.countbook;
 
 import android.content.Intent;

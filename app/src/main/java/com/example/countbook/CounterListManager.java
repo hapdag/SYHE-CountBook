@@ -1,3 +1,11 @@
+/*
+** Implemented following Doctor Hindle's StudentPicker Saga on youtube
+* handles the major IO portion of the app, take a CounterList object and converts into byte string and vise versa
+* then the getting and setting of the converted objects is handled by the save/load from file
+* CounterManager class is used with CounterListController class along with listeners
+* youtube playlist link: https://www.youtube.com/watch?v=5PPD0ncJU1g&list=PL240uJOh_Vb4PtMZ0f7N8ACYkCLv0673O
+ */
+
 package com.example.countbook;
 
 import android.content.Context;
