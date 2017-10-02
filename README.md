@@ -14,9 +14,10 @@
 5. Decrementing a counter's value via button press
 6. Reseting a counter's value via button press
 7. Main actvity page displays a list of counters, with number of counters summarized
-<br> 
-## Credits to:
 <br>
+
+## Credits to:
+
 
 [Change Date class formatting](https://stackoverflow.com/questions/10312889/how-to-get-date-object-in-yyyy-mm-dd-format-in-android)
 
