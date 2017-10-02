@@ -4,16 +4,16 @@
 <br>"Consider the situation of someone who needs to count things. Perhaps those things are supplies being consumed like food or medicine, or people entering some event. What is needed is a simple, attractive, intuitive, mobile app to manage a set of counters. Let us call this app: CountBook."
 <br>
 <br>Functionalities implemented:
--Adding a new counter with parameters:
-...-Counter name
-...-Initial Value
-...-Counter comment
--Deleting a exsiting counter
--View/Edit counter values
--Incrementing a counter's value via button press
--Decrementing a counter's value via button press
--Reseting a counter's value via button press
--Main actvity page displays a list of counters, with number of counters summarized
+1. Adding a new counter with parameters:
+..*Counter name
+..*Initial Value
+..*Counter comment
+2. Deleting a exsiting counter
+3. View/Edit counter values
+4. Incrementing a counter's value via button press
+5. Decrementing a counter's value via button press
+6. Reseting a counter's value via button press
+7. Main actvity page displays a list of counters, with number of counters summarized
 <br> 
 ## Credits to:
 <br>
