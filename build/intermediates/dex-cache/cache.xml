@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\Saddog\.android\build-cache\1d5a3ec66ec5ec8df53602de2db74eeafb8cd9e7\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="6a022bf00ccd0948a8180c505e8e458bbddd43a6">
+        <dex dex="C:\Users\Saddog\Desktop\C301\CountBook\app\build\intermediates\pre-dexed\debug\classes_30136bec7285dfede108ec2176c6dcbab2356f43.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Saddog\.android\build-cache\78485e15db19b9bd869af6cb2ab5f6941f84f949\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="cddcd0fb93bc70e27325f2f715b2710332004ebb">
+        <dex dex="C:\Users\Saddog\Desktop\C301\CountBook\app\build\intermediates\pre-dexed\debug\classes_b1e0afab7f54e723e445d6e1a3cb5dc648279bb8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Saddog\.android\build-cache\381d1f3875fa147d4a51307314c0c2c1113ad833\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="c4f45092eee6cdf1a5dbd597b2b6819be652ce2e">
+        <dex dex="C:\Users\Saddog\Desktop\C301\CountBook\app\build\intermediates\pre-dexed\debug\classes_1db6626efaee14792eee5220223b7e1321f766c1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Saddog\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.2\3edcfe49d2c6053a70a2a47e4e1c2f94998a49cf\gson-2.8.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="3edcfe49d2c6053a70a2a47e4e1c2f94998a49cf">
+        <dex dex="C:\Users\Saddog\Desktop\C301\CountBook\app\build\intermediates\pre-dexed\debug\gson-2.8.2_a1d38e6f8725733b98d8158e8a11a0d66ba37ebd.jar" />
+    </item>
+
+</items>

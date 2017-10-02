@@ -10,8 +10,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class EditCounterActivity extends AppCompatActivity {
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,8 +82,6 @@ public class EditCounterActivity extends AppCompatActivity {
                         }}
                 });
 
-
-
         plusButton.setOnClickListener(
                 new View.OnClickListener()
                 {
@@ -97,8 +93,6 @@ public class EditCounterActivity extends AppCompatActivity {
                             CounterListController.getCounterList().getCounter(name).incrementCounter();
                             valueTextView.setText(""+CounterListController.getCounterList().getCounter(name).getCounterValue());
                         }
-
-
                     }
                 });
 
@@ -122,8 +116,6 @@ public class EditCounterActivity extends AppCompatActivity {
                                 valueTextView.setText("" + CounterListController.getCounterList().getCounter(name).getCounterValue());
                             }
                         }
-
-
                     }
                 });
 

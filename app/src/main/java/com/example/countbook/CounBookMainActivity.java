@@ -1,20 +1,22 @@
+/*
+** Main Activity class for CountBook, set itself to layout screen and initiates CounterListManager for io
+* Setup ListView with Adapter onStart and pull data from CounterListController and updates onto layout
+* Clicking on counters on ListView gives user option to view/edit counter detail or delete the counter
+* Clicking on add counter button
+*
+*/
 package com.example.countbook;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collection;
