@@ -75,7 +75,7 @@ public class Counter implements Serializable {
 
     @Override
     public String toString(){
-        String returnStr ="Counter name: " + getName()+"; Counter value: "+getCounterValue();
+        String returnStr ="[Name: " + getName()+" || Count: "+getCounterValue()+"]";
         return returnStr;}
 
     public boolean equals(Object compareCounter) {

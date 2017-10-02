@@ -16,21 +16,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 public class CounBookMainActivity extends AppCompatActivity {
     @Override
@@ -63,12 +50,11 @@ public class CounBookMainActivity extends AppCompatActivity {
                 adapter.notifyDataSetChanged();
             }
         });
-        counterListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        counterListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public boolean onItemLongClick(AdapterView<?> adapterView, View view,
-                                           final int position, long id) {
+            public void onItemClick(AdapterView<?> adapterView, View view, final int position, long id) {
                 AlertDialog.Builder adb = new AlertDialog.Builder(CounBookMainActivity.this);
-                adb.setMessage("Options "+ list.get(position).toString());
+                adb.setMessage("Counter options");
                 adb.setCancelable(true);
                 adb.setPositiveButton("Delete",new DialogInterface.OnClickListener(){
                     @Override
@@ -91,7 +77,6 @@ public class CounBookMainActivity extends AppCompatActivity {
                     }
                 });
                 adb.show();
-                return false;
             }
         });
     }
