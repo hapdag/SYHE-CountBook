@@ -5,7 +5,7 @@
 <br>
 <br>Functionalities implemented:
 1. Adding a new counter with parameters:
-··* Counter name
+<br>··* Counter name
 ··* Initial Value
 ··* Counter comment
 2. Deleting a exsiting counter
