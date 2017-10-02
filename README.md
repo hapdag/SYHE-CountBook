@@ -5,9 +5,9 @@
 <br>
 <br>Functionalities implemented:
 1. Adding a new counter with parameters:
-<br>··* Counter name
-··* Initial Value
-··* Counter comment
+<br> Counter name
+ Initial Value
+ Counter comment
 2. Deleting a exsiting counter
 3. View/Edit counter values
 4. Incrementing a counter's value via button press
