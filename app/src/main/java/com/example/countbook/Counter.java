@@ -1,3 +1,10 @@
+/*
+    Main Counter class, constructs counter objects with given arguments, some getters and setters for values that needs to be edited
+    Implements serializable for CounterListManager for IO
+    Java date objects are formatted to desired format and converted into Strings
+ */
+
+
 package com.example.countbook;
 
 import java.io.Serializable;

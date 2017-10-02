@@ -1,3 +1,10 @@
+/*
+    CounterList object used to store Counter objects, constructs with proper arguments provided
+    Notifies listeners when getters and setter methods are called for CountListManager to do IO
+    Getters and setters for getting and setting stuff
+ */
+
+
 package com.example.countbook;
 
 import java.io.Serializable;

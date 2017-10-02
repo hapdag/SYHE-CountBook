@@ -83,7 +83,6 @@ public class CounBookMainActivity extends AppCompatActivity {
         });
     }
 
-
     public void addCountersFunction(View view) {
         Intent intent = new Intent(this, AddCounterActivity.class);
         startActivity(intent);

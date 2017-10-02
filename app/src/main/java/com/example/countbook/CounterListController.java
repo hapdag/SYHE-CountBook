@@ -1,3 +1,8 @@
+/*
+    Singleton used for passing Counter and CounterList object around multiple activities, really useful stuff
+    Get and set CounterList objects from IO using CounterListManager
+ */
+
 package com.example.countbook;
 
 import java.io.IOException;

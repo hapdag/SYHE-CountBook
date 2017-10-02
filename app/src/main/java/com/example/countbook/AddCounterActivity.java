@@ -1,3 +1,9 @@
+/*
+    Activity responsible for grabbing data from EditView fields on layout
+    Error handling for counterValue is NOT IMPLEMENTED, testing with edge cases will case counterValue to crash the app
+    e.g. clicking add counter button without editing the string on counterValue EditView field will cause the app to crash
+ */
+
 package com.example.countbook;
 
 import android.support.v7.app.AppCompatActivity;
